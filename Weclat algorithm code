@@ -1,0 +1,18 @@
+trans <-  list( c())  
+## convert list to transactions  
+trans <-  transactions(trans)  
+## add weight information  
+transactionInfo(trans) <- data.frame(weights = c())  
+inspect(trans)  
+## mine weightd support itemsets   
+s <- weclat(trans, parameter = list(support = 0.5),  
+            control = list(verbose = TRUE))  
+inspect(sort(s))  
+## create association rules  
+r <- ruleInduction(s, confidence = 0.6)  
+inspect(r)  
+summary(r)  
+install.packages("arulesViz")  
+library(arulesViz)  
+plot(r)  
+plot(r,method="graph") 
