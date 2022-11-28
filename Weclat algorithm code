@@ -1,4 +1,4 @@
-trans <-  list( c())  
+trans <-  list( c(risk dataset))  
 ## convert list to transactions  
 trans <-  transactions(trans)  
 ## add weight information  
